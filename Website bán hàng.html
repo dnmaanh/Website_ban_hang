@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Website bán hàng </title>
+    <script> 
+        alert("Chào mừng đến với Website bán hàng");
+        document.addEventListener('DOMContentLoaded', function() {
+            // Have each button change the color of the heading
+            document.querySelectorAll('.color-change').forEach(function(button) {
+                button.onclick = function() {
+                    document.querySelector('#hello').style.color = button.dataset.color;
+                };
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+                document.querySelector('#new-task').onsubmit = function() {
+                    // Create new item for list
+                    const li = document.createElement('li');
+                    li.innerHTML = document.querySelector('#task').value;
+                    // Add new item to task list
+                    document.querySelector('#tasks').append(li);
+                    // Clear input field
+                    document.querySelector('#task').value = '';
+                    // Stop form from submitting
+                    return false;
+                };
+            });
+        function like() {
+                alert('Cảm ơn bạn đã thích Website bán hàng');
+            } 
+        let tim = 0;
+        function Thatim() {
+          tim ++;
+            document.querySelector('#tim').innerHTML = tim; 
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+                setInterval(count, 1000);
+            });
+            let counter = 0;
+            function count() {
+                counter++;
+                document.querySelector('#counter').innerHTML = counter;
+            }
+    </script>
+  </head>
+  <body>
+    <h1 id="hello">Hello!</h1>
+        <button class="color-change" data-color="red">Red</button>
+        <button class="color-change" data-color="blue">Blue</button>
+        <button class="color-change" data-color="green">Green</button>
+    <a href="HOME.php" title="Website bán hàng" target="_blank"><h1>Website bán hàng</h1></a>
+    <table border= 2px style = "background-color: lightgreen;">
+      <caption > <b> Mặt hàng </b> </caption>
+      <tr>
+        <th>Mã mặt hàng</th>
+        <th>Tên mặt hàng</th>
+        <th>Đơn giá</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><a href="HOME.php" title="Bút bi" target="_blank">Bút bi</a></td>
+        <td>23000</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><a href="HOME.php" title="Giấy học sinh" target="_blank">Giấy học sinh</td>
+        <td>11500</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><a href="HOME.php" title="Thước kẻ" target="_blank">Thước kẻ</td>
+        <td>6900</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><a href="HOME.php" title="Tẩy" target="_blank">Tẩy</td>
+        <td>23000</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><a href="HOME.php" title="Mực" target="_blank">Mực</td>
+        <td>46000</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><a href="HOME.php" title="Ghim" target="_blank">Ghim</td>
+        <td>2300</td>
+      </tr>
+    </table>
+    <h3> Hình ảnh mặt hàng</h3>
+    <ul>
+      <li>Bút bi</li>
+      <img src="Bút bi.jpg" width= 500px height= 500px>
+      <li>Giấy học sinh</li>
+      <img src="Giấy học sinh.jpg" width= 500px height= 500px>
+      <li>Thước kẻ</li>
+      <img src="Thước kẻ.jpg" width= 500px height= 500px>
+      <li>Tẩy</li>
+      <img src="Tẩy.jpg" width= 500px height= 500px>
+      <li>Mực</li>
+      <img src="Mực.jpg" width= 500px height= 500px>
+      <li>Ghim</li>
+      <img src="Ghim.jpg" width= 500px height= 500px>
+    </ul>
+    <h1>Mặt hàng cần mua</h1>
+        <ul id="tasks">
+        </ul>
+        <form id="new-task">
+            <input type="text" id="task" autofocus placeholder="New Task" >
+            <input type="submit">
+        </form>
+    <h2>Trang web này của Nhóm 17</h2>
+    <img src="Nhóm 17.jpg" width= 500px height= 500px> <br>
+    <button onclick="like()">Thích</button> <br>
+    <h2>Thả tim</h2>
+    <h1 id="tim">0</h1>
+        <button onclick="Thatim()">Click Here!</button> <br>
+    <a href="Nhận thẻ giảm giá miễn phí.php" title="Nhận thẻ giảm giá miễn phí" target="_blank"><h1>Nhận thẻ giảm giá miễn phí</h1></a>
+    <h1>Thời gian bạn ở Website bán hàng</h1>
+    <h1 id="counter">0</h1>
+  </body>
+</html>
